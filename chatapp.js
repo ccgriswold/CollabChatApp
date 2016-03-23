@@ -16,7 +16,7 @@ window.addEventListener('load', function() {
     }
     loadDoc(username, message);
   });
-  var get = document.getElementById('new');
+  var get = document.getElementById('newMessage');
   get.addEventListener('click', function() {
     function getMessage() {
       var request = new XMLHttpRequest();
