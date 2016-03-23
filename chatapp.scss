@@ -1,0 +1,61 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+html {
+  font-family: $georgia;
+}
+body {
+  margin-top: 20px;
+  @include outer-container;
+  background-color: #01314e;
+}
+#chat {
+  @include span-columns(6);
+  @include shift(3);
+  background-color: #02619b;
+  color: white;
+  border-radius: 3px;
+  h1 {
+    font-size: 70px;
+    text-align: center;
+    margin: 30px 0;
+  }
+  h1::first-letter {
+    font-size: 90px;
+  }
+  #first {
+    display: flex;
+    font-size: 20px;
+    margin: 5px;
+    height: 90px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    input {
+      width: 400px;
+      font-size: 15px;
+      border-radius: 3px;
+      background-color: white;
+    }
+  }
+}
+#buttons {
+  padding: 5px 30px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+}
+button {
+  @include button;
+  width: 220px;
+}
+#display-messages {
+  background-color: white;
+  color: black;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 3px;
+  padding: 10px;
+  h4 {
+    text-transform: uppercase;
+  }
+}
