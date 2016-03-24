@@ -60,7 +60,7 @@ gulp.task('js', function() {
     .pipe(gulp.dest('public/js'));
 });
 
-
+gulp.task('default', ['html', 'css', 'js']);
 
 
 
