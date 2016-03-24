@@ -1,4 +1,6 @@
 module.exports = function newMessage(){
+  var moment = require('moment');
+
   var get = document.getElementById('newMessage');
   function getMessage() {
     var request = new XMLHttpRequest();
@@ -12,7 +14,7 @@ module.exports = function newMessage(){
         var serverUser = document.createElement('h4');
         var serverMessage = document.createElement('p');
         var display = document.getElementById("display-messages");
-        new Date(serverPostTime);
+        moment(new Date(serverPostTime));
         serverPostTime.textContent= data[i].when;
         serverUser.textContent = data[i].user;
         serverMessage.textContent = data[i].message;

@@ -1,6 +1,6 @@
 module.exports = function submit(){
   var submit = document.getElementById('submit');
-submit.addEventListener('click', function() {
+
   var username = document.getElementById('username').value;
   var message = document.getElementById('message').value;
   //Print that up.
@@ -15,5 +15,4 @@ submit.addEventListener('click', function() {
     }));
   }
   loadDoc(username, message);
-});
 };
