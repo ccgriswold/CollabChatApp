@@ -1,6 +1,5 @@
 module.exports = function newMessage(){
   var get = document.getElementById('newMessage');
-  get.addEventListener('click', function() {
   function getMessage() {
     var request = new XMLHttpRequest();
     request.open('GET', 'http://chat.queencityiron.com/messages');
@@ -28,5 +27,4 @@ module.exports = function newMessage(){
   console.log('HEY');
   //Pull what you want, and produce that - username and message, and time stamp.
   getMessage();
-});
 };
