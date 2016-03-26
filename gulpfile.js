@@ -15,6 +15,7 @@ var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
 var obfuscator = require('gulp-js-obfuscator');
 var gulpsass = require('gulp-sass');
+var minify= require('gulp-minify');
 
 
 /* This is the alternative to all of below
@@ -58,6 +59,7 @@ gulp.task('js', function() {
       console.error(String(error));
     })
     .pipe(browserify())
+    .pipe(minify())
     .pipe(gulp.dest('public/js'));
 });
 
