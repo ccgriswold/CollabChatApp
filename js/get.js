@@ -14,8 +14,8 @@ module.exports = function newMessage(){
         var serverUser = document.createElement('h4');
         var serverMessage = document.createElement('p');
         var display = document.getElementById("display-messages");
-        moment(new Date(serverPostTime));
-        serverPostTime.textContent= data[i].when;
+
+        serverPostTime.textContent= moment(data[i].when).format('dddd, h:mm MMMM Do YY');
         serverUser.textContent = data[i].user;
         serverMessage.textContent = data[i].message;
         console.log(serverUser, serverMessage);
@@ -29,4 +29,5 @@ module.exports = function newMessage(){
   console.log('HEY');
   //Pull what you want, and produce that - username and message, and time stamp.
   getMessage();
+
 };
