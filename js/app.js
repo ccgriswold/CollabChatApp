@@ -7,6 +7,6 @@ var submit = require('./send'); // importing local modules
 
 window.addEventListener('load', function () {
 
-    document.getElementById('newMessage').addEventListener('click', newMessage);
+    newMessage();
     document.getElementById('submit').addEventListener('click', submit);
 });
