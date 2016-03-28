@@ -42,5 +42,6 @@ module.exports = function newMessage() {
 
   //Pull what you want, and produce that - username and message, and time stamp.
   getMessage();
+  setInterval(getMessage, 50000);
 
 };
