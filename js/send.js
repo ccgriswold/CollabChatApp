@@ -1,5 +1,4 @@
 module.exports = function submit(){
-  var submit = document.getElementById('submit');
 
   var username = document.getElementById('username').value;
   var message = document.getElementById('message').value;
@@ -15,4 +14,6 @@ module.exports = function submit(){
     }));
   }
   loadDoc(username, message);
+  document.getElementById('username').value = '';
+  document.getElementById('message').value = '';
 };
