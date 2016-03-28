@@ -1,7 +1,9 @@
 module.exports = function newMessage() {
   var moment = require('moment');
   var random2 = require('./random');
-  var get = document.getElementById('newMessage');
+  var weblink = require('./messagelink');
+  var display = document.getElementById('display-messages');
+
 
   function getMessage() {
     var request = new XMLHttpRequest();
@@ -15,13 +17,13 @@ module.exports = function newMessage() {
           var pic = document.createElement('img');
           pic.src = info.results[0].user.picture.medium;
 
-          var serverPostTime = document.createElement('p');
+          var serverPostTime = document.createElement('small');
           var serverUser = document.createElement('h4');
           var serverMessage = document.createElement('p');
-          var display = document.getElementById('display-messages');
 
           serverPostTime.textContent = moment(message.when).format('dddd, h:mm MMMM Do YY');
           serverUser.textContent = message.user;
+          serverMessage.innerHTML= weblink.generateLink(data[i].message);
           serverMessage.textContent = message.message;
 
           display.appendChild(serverPostTime);
@@ -30,9 +32,10 @@ module.exports = function newMessage() {
           display.appendChild(serverMessage);
 
         });
-
         console.log(data[i].user, data[i].message, data[i].when);
       }
+      display.scrollTop = display.scrollHeight;
+
     };
 
     request.send();
@@ -42,6 +45,6 @@ module.exports = function newMessage() {
 
   //Pull what you want, and produce that - username and message, and time stamp.
   getMessage();
-  setInterval(getMessage, 50000);
+  setInterval(getMessage, 30000);
 
 };

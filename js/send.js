@@ -14,5 +14,7 @@ module.exports = function submit(){
       message: message,
     }));
   }
+  document.getElementById('username').value = '';
+  document.getElementById('message').value = '';
   loadDoc(username, message);
 };
